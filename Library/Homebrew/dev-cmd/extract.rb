@@ -86,6 +86,9 @@ module Homebrew
 
       flag "--version=",
         description: "Extract the provided <version> of <formula> instead of the most recent."
+
+      flag "--from=",
+        description: "Extract the <formula> from a tap other than core"
       switch :force
       switch :debug
     end

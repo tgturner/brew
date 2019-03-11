@@ -18,7 +18,7 @@ describe "brew extract", :integration_test do
     expect { brew "extract", "testball", target.name }
       .to be_a_success
 
-    expect(path/"Formula/testball@0.2.rb").to exist
+    expect(path/"Formula/testball@0.3.rb").to exist
 
     expect(Formulary.factory(path/"Formula/testball@0.2.rb").version).to be == "0.2"
 

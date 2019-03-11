@@ -34,8 +34,8 @@ describe "brew extract", :integration_test do
     path = Tap::TAP_DIRECTORY/"homebrew/homebrew-foo"
     from_path = Tap::TAP_DIRECTORY/"tgturner/test"
 
-    (path/"Formula").mkpat
-    (from_path/"Formula").mkpat
+    (path/"Formula").mkpath
+    (from_path/"Formula").mkpath
 
     target = Tap.from_path(path)
     from_tap = Tap.from_path(from_path)

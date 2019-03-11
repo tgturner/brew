@@ -105,7 +105,12 @@ module Homebrew
     destination_tap.install unless destination_tap.installed?
 
     name = ARGV.named.first.downcase
-    repo = CoreTap.instance.path
+
+    repo = if args.from
+      Tap.fetch(args.from)
+    else
+      CoreTap.instance.path
+    end
     # Formulae can technically live in "<repo>/<formula>.rb" or
     # "<repo>/Formula/<formula>.rb", but explicitly use the latter for now
     # since that is how the core tap is structured.
